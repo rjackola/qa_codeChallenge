@@ -15,8 +15,8 @@ describe("checking for truth", () => {
     expect(wordToCheck.split("kayak").reverse().join("kayak")).toBe(wordToCheck);
   });
   test("true", () => {
-    let val = true; //set this to a passing value
-    expect(val).toBeTruthy();
+    let val = false; //set this to a passing value
+    expect(val).toBeFalsy();
   });
   test("there is a sequence to this test", () => {
     let values: Array<any> = ["booleans are true and false", true, 33]; // set values here - the array will take any type or combo of types.
