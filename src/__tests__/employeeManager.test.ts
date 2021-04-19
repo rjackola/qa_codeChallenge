@@ -37,6 +37,32 @@ describe("Employee Manager", () => {
       name: "Bernice Ortiz",
       phone: "4824931093",
       title: "Grand Poobah",
-    });
-  });
-});
+    })
+  })
+    it("Can add a new employee", async ()=>{
+      await em.addEmployee();
+      await em.selectEmployeeByName("New Employee")
+      await em.editEmployee({
+        name: "Greg Allman",
+        phone: "9876543212",
+        title: "King of the world"});
+    
+      })
+    it("Cancelling edit of employee", async () => {
+        await em.selectEmployeeByName("Lou White")
+        await em.editEmployee({ name: "Lou black"})
+        await em.cancelChanges()
+        })
+      it("navigating away and doesn't save", async () => {
+        await em.addEmployee();
+      await em.selectEmployeeByName("Ruby Estrada")
+      await em.editEmployee({
+        name: "ruby eesssstrrradddaaa"})
+      await em.selectEmployeeByName("Marnie Barnett")
+      await em.selectEmployeeByName("Ruby Estrada")
+      })
+    })
+  
+ 
+
+
