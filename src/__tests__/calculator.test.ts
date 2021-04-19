@@ -30,7 +30,7 @@ describe("Calculator", () => {});
     test(`the ${calc.method} method with ${calc.x} and ${calc.y}`, ()=> {
       switch (calc.method) {
         case "add":
-          expect(calculator.add(calc.x, calc.y)).toEqual(calc.5 + calc.10);
+          expect(calculator.add(calc.x, calc.y)).toEqual(calc.x + calc.y);
           break;
         case "subtract":
           expect(calculator.subtract(calc.x, calc.y)).toEqual(calc.x - calc.y);
@@ -39,7 +39,7 @@ describe("Calculator", () => {});
           expect(calculator.multiply(calc.x, calc.y)).toEqual(calc.x * calc.y);
           break; 
         case "divide":
-            expect(calculator.divide(calc.x, calc.y)).toEqual(calc.x * calc.y);
+            expect(calculator.divide(calc.x, calc.y)).toEqual(calc.x / calc.y);
             break; 
           default:
             console.log("No matching calculations")
