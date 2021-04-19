@@ -23,5 +23,29 @@ let dataset = [
   { x: 81, y: 227, method: "multiply" },
   { x: 81, y: 227, method: "divide" },
 ];
-
+/* Below is the test to run each equation for the calculator. Remember that method is refering to what equations are being done. */
+ 
 describe("Calculator", () => {});
+  dataset.forEach((calc) => {
+    test(`the ${calc.method} method with ${calc.x} and ${calc.y}`, ()=> {
+      switch (calc.method) {
+        case "add":
+          expect(calculator.add(calc.x, calc.y)).toEqual(calc.5 + calc.10);
+          break;
+        case "subtract":
+          expect(calculator.subtract(calc.x, calc.y)).toEqual(calc.x - calc.y);
+          break; 
+        case "multiply":
+          expect(calculator.multiply(calc.x, calc.y)).toEqual(calc.x * calc.y);
+          break; 
+        case "divide":
+            expect(calculator.divide(calc.x, calc.y)).toEqual(calc.x * calc.y);
+            break; 
+          default:
+            console.log("No matching calculations")
+      }
+    })
+  })
+/* be sure to ask dre about descirbe and test. Also ask about deleting the node modules and the package json. */
+/* I am practicing pushing to github*/
+
